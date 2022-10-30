@@ -1,0 +1,144 @@
+/*Body font*/
+body {
+  font-family: Poppins, sans-serif;
+  background-image: url('../images/concrete_seamless.png');
+}
+
+/*header img*/
+
+#logo{
+  width: 100%;
+  height: auto;
+}
+
+img{
+  width: 100%;
+}
+
+/*Nav*/
+.nav_links, .nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Cards*/
+.pricing {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  /* using align-items does not target all of the cards */
+}
+
+/*Gallery*/
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery {
+  padding-bottom: 20px;
+}
+
+.gallery img {
+  border: 5px solid #50C7C7;
+  margin: 10px;
+}
+
+@keyframes mylogo {
+  from {width: 25px;
+      opacity: 0;}
+
+  to {width: 400px;
+      opacity: 1;}
+}
+
+#logo{
+  animation-name: mylogo;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: no-repeat;
+  max-height: 400px;
+}
+
+/*desktop*/
+@media screen and (min-width: 700px){
+  /*header img*/
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-around;
+  }
+
+  #logo{
+    width: 400px;
+    height: auto;
+  }
+
+  .nav_links{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav_item{
+    padding: 10px;
+  }/*avoid placing on top*/
+
+  /*cards*/
+  .pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    flex-basis: 300px;
+  }
+
+  /*images*/
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #image1, #image2, #image3, #image4, #image5{
+    width: 300px;
+  }
+}
+
+
+     /* removes motion by removing the animation */
+  @media screen and (prefers-reduced-motion: reduce) {
+      #logo {
+          animation: none;
+      }
+  }
+  /*refer to online solutions*/
+  @media print {
+
+    * {
+      background-image: none !important;
+    }
+
+    .card {
+      -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+      print-color-adjust: exact !important; /*Firefox*/
+      -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+  }
+    .pricing {
+      align-items: baseline;
+    }
+    #gallery, .gallery {
+      display: none;
+    }
+
+    footer {
+      print-color-adjust: exact !important;  /*Firefox*/
+      -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    }
+  }
